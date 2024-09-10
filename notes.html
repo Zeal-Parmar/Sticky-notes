@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sticky Notes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <header class="text-center mb-8">
+    <h1 class="text-3xl font-bold text-gray-800">Sticky Notes</h1>
+    <p class="text-gray-600">Create and manage your sticky notes</p>
+  </header>
+
+  <div class="max-w-4xl mx-auto">
+    <!-- Add Note Button -->
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-xl font-bold text-gray-700">Your Notes</h2>
+      <button id="add-note-btn" class="bg-blue-500 text-white px-4 py-2 rounded-md shadow hover:bg-blue-600">
+        + Add Note
+      </button>
+    </div>
+
+    <!-- Notes Grid -->
+    <div id="notes-grid" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <!-- Single Sticky Note -->
+      <div class="bg-yellow-200 p-4 rounded-lg shadow-md text-gray-900">
+        <h3 class="text-lg font-semibold">Sticky Note Title</h3>
+        <p class="text-sm mt-2">This is an example of a sticky note. You can add your own notes.</p>
+      </div>
+      <!-- More Sticky Notes will go here dynamically -->
+    </div>
+  </div>
+
+  <!-- Add Note Modal -->
+  <div id="note-modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white rounded-lg p-6 max-w-md w-full shadow-lg">
+      <h2 class="text-xl font-bold mb-4">Add New Note</h2>
+      <textarea id="note-text" class="w-full border border-gray-300 p-2 rounded-md" rows="5" placeholder="Type your note here..."></textarea>
+      <div class="flex justify-end space-x-2 mt-4">
+        <button id="cancel-btn" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Cancel</button>
+        <button id="save-btn" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Save Note</button>
+      </div>
+    </div>
+  </div>
